@@ -8,7 +8,7 @@ app = Flask(__name__)
 s3 = boto3.client('s3')
 
 # Define the bucket name (you can pass this as an environment variable or parameter)
-BUCKET_NAME = 'Bucket-name'
+BUCKET_NAME = 'mys32772'
 
 @app.route('/list-bucket-content', defaults={'path': ''})
 @app.route('/list-bucket-content/<path:path>', methods=['GET'])
