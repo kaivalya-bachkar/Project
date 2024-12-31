@@ -1,31 +1,14 @@
 #!/bin/bash
-sudo apt update
-sudo apt upgrade
+sudo apt-get update -y
 
-#install python and pip
-sudo apt install -y python3
-sudo apt install -y python3-pip
+# Install Docker to Run the container
+sudo apt install -y docker.io
 
-#create a virtual env
-sudo apt install python3-venv
-python3 -m venv venv
-source venv/bin/activate
+# To Start the Docker Service
+sudo service docker start
 
-# Install Flask and boto3
-pip install Flask
-pip install boto3
+# To Give the Permission to a Docker
+sudo chown $user /var/run/docker.sock
 
-# Create app directory
-mkdir /home/ubuntu/app
-cd /home/ubuntu/app
-
-# Download the app script from S3 (or use any method to bring app.py to the instance)
-# Assuming you have uploaded app.py to S3 or GitHub
-wget https:github.com/kaivalya-bachkar/Project/app/app.py.git -O app.py
-
-#configure flask to run in production
-pip install gunicorn
-gunicorn --bind 0.0.0.0:5000 app:app
-
-# Start Flask app
-nohup python3 app.py &
+# To Run the container
+docker run -p 5000:5000 -e AWS_ACCESS_KEY_ID=<your_access_key> -e AWS_SECRET_ACCESS_KEY=<your_secret_key> kaivalyabachkar/devops:latest
