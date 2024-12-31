@@ -8,7 +8,7 @@ sudo apt install -y docker.io
 sudo service docker start
 
 # To Give the Permission to a Docker
-sudo chown $user /var/run/docker.sock
+sudo chown $USER /var/run/docker.sock
 
 # To Run the container
 docker run -p 5000:5000 -e AWS_ACCESS_KEY_ID=<your_access_key> -e AWS_SECRET_ACCESS_KEY=<your_secret_key> kaivalyabachkar/devops:latest
