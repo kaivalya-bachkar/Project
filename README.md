@@ -1,7 +1,7 @@
 This project consists of two parts:
 1.	HTTP Service: A Python-based HTTP service that lists the contents of an S3 bucket.
 2.	Terraform Deployment: Infrastructure as Code (IaC) using Terraform to deploy the HTTP service on AWS.
-Part 1: HTTP Service
+1. HTTP Service
   Installed the following Services to run A Python-based HTTP service:
     Python 3
     AWS CLI configured with valid credentials
@@ -18,7 +18,7 @@ c.	Test the Service Locally:
   Open a browser or use curl to test the endpoints:
     curl http://localhost:5000/list-bucket-content
     curl http://localhost:5000/list-bucket-content/dir1
-Part 2: Terraform Deployment
+2. Terraform Deployment
   Installed Terraform on your machine.
 Terraform Infrastructure Setup
 a.	Create Terraform Files:
