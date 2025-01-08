@@ -19,13 +19,19 @@ a. Create the Python HTTP Service
 
 b. Create the Dockerfile
 
-Running Locally with Docker
+### Running Locally with Docker
 
-### Build the Docker Image:
-  docker build -t myimg .
+- Build the Docker Image:
+  
+  ```bash
+   docker build -t myimg .
+   ```
 
-### Run the Docker Container:
+- Run the Docker Container:
 
+   ```bash
+   docker run -p 5000:5000 -e AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY> -e AWS_SECRET_ACCESS_KEY=<AWS_SECRET_KEY> myimg
+   ```
 c.	Test the Service Locally:
 
 ### Open a browser or use curl to test the endpoints:
