@@ -24,7 +24,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN pip install Flask boto3 gunicorn
 
 # Download the app script from GitHub (assuming it's public)
-RUN wget https://raw.githubusercontent.com/kaivalya-bachkar/Project/refs/heads/main/App/app.py -O /app/app.py
+RUN wget https://raw.githubusercontent.com/kaivalya-bachkar/S3-Bucket-Content-Listing-Service-with-AWS-Terraform-Deployment/refs/heads/main/App/app.py
 
 # Expose the port where the Flask app will run
 EXPOSE 5000
